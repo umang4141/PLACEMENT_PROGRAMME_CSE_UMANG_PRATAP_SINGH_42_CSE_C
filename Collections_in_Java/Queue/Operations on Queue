@@ -1,0 +1,46 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.*;
+import java.io.*;
+public class Queue_1 {
+    public void Insert_Ele(Queue<Integer> q1,int arr[],int n)
+    {
+       for(int i =0;i<n;i++)
+       {
+        q1.add(arr[i]);
+       }
+       System.out.print(q1 + " ");
+       System.out.println();
+       System.out.println("Peek Element of the Queue is: " + q1.peek());
+    }
+    public void peek_Element(Queue<Integer> q1)
+    {
+        int peek_ = q1.peek();
+        System.out.println("Peek Element is: " + peek_);
+    }
+    public void Remove_Ele(Queue<Integer> q1)
+    {
+          int remove_ = q1.remove();
+          System.out.println("Remove: " + remove_); 
+    }
+    public static void main(String args[])
+    {
+        Queue<Integer> q1 = new LinkedList<Integer>();
+        Queue_1 s1 = new Queue_1();
+        Scanner sc = new Scanner(System.in);
+        int arr[] = {4,3,5,23,21,20,10,19};
+        int n =arr.length;
+        s1.Insert_Ele(q1,arr,n);
+        s1.Remove_Ele(q1);
+        s1.peek_Element(q1);
+        s1.Remove_Ele(q1);
+        s1.peek_Element(q1);
+        s1.Remove_Ele(q1);
+
+
+
+        
+
+
+    }
+}
