@@ -1,0 +1,32 @@
+// In Linkedlist every element have its separate object having a data and the address part.
+
+import java.util.*;
+import java.io.*;
+class Linked_list1
+{
+    public void solution(LinkedList<Integer> l1,int arr[],int n)
+    {
+     
+        for(int i =0;i<n;i++)
+        {
+            l1.add(arr[i]);
+        }
+        System.out.println(l1 + " ");
+        Iterator x = l1.descendingIterator();
+       while(x.hasNext())
+       {
+        System.out.print(x.next() + " ");
+       } 
+    }
+    public static void main(String args[])
+    {
+      LinkedList<Integer> l1 = new LinkedList<Integer>();
+      Scanner sc = new Scanner(System.in);
+      Linked_list1 s1 = new Linked_list1();
+      
+      int arr[] = {3,1,3,33,1,32,32,33,43};
+      int n = arr.length;
+     s1.solution(l1,arr,n);
+
+    }
+}
