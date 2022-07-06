@@ -1,0 +1,51 @@
+import java.util.*;
+import java.io.*;
+public class check_permutattion {
+   
+    public static void main(String args[])
+    {
+       String s1 ="aba";
+       String s2 ="bab";
+      if(s1.length() != s2.length())
+      {
+      System.out.println(false);
+      }
+
+      int arr[] = new int[256];
+      for(int i=0;i<256;i++)
+      {
+          arr[i] = 0;
+      }
+      for(int i=0;i<s1.length();i++)
+      {
+        char ch = s1.charAt(i);
+        arr[ch] = arr[ch] + 1;
+        System.out.println(arr[ch]);
+      }
+      for(int i=0;i<s2.length();i++)
+      {
+        char ch = s2.charAt(i);
+        arr[ch] = arr[ch] - 1;
+         System.out.println(arr[ch]);
+
+      }
+      int flag = 0;
+      for(int i =0;i<256;i++)
+
+      {
+               if(arr[i]!=0){
+                  flag++;
+               }
+      }
+      if(flag>=1)
+      {
+        System.out.println(false);
+
+      }
+      else
+        {
+            System.out.println(true);
+        }
+      
+    }
+}
