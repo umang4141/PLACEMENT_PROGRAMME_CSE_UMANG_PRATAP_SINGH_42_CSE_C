@@ -1,0 +1,54 @@
+import java.util.*;
+import java.io.*;
+public class Sorted_Set
+{
+    public static void solved(int arr[],int arr1[],SortedSet<Integer> s1)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            s1.add(arr[i]);
+        }
+        for(int i =0;i<arr1.length;i++)
+        {
+           s1.add(arr1[i]);
+        }
+        System.out.println("Union of arrays are:");
+        System.out.print(s1 + " ");
+        System.out.println();
+        for(Integer x:s1)
+        {
+            System.out.print(x + " ");
+        }
+       
+        SortedSet<Integer> s2 = new TreeSet<Integer>();
+      //s1.retainAll(s2);
+      //System.out.print(s1 + " ");
+      //for(int i=0;i<arr1.length;i++)
+       //{
+        //if(s1.contains(arr1[i]));
+       
+       //}
+       //System.out.print(s1 + " ");
+       SortedSet<Integer> s3 = new TreeSet<Integer>();
+       for(int i=0;i<arr1.length;i++)
+       {
+        s3.add(arr[i]);
+       }
+       System.out.println();
+       for(int i=0;i<arr1.length;i++)
+       {
+          s2.add(arr1[i]);
+       }
+       s2.retainAll(s3);
+       System.out.println("Intersection of Arrays are:");
+       System.out.print(s2 + " ");
+    }
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int arr[] = {9,5,3,2,3,2,10,22,12,21};
+        int arr1[] = {12,4,2,3,21,9,22,9,5};
+        SortedSet<Integer> s1 = new TreeSet<Integer>();
+        solved(arr,arr1,s1);
+    }
+}
