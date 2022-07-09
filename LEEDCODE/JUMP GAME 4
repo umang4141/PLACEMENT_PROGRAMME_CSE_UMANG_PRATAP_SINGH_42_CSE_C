@@ -1,0 +1,13 @@
+int[] dp = new int[nums.length];
+            dp[nums.length - 1] = nums[nums.length - 1];
+            Deque<Integer> que = new ArrayDeque<>();
+            que.add(nums.length - 1);
+        for(int i = nums.length - 2; i >= 0; i--){
+            if(que.peek() > i + k)
+            	que.poll();
+            dp[i] = dp[que.peek()] + nums[i];
+            while(que.size() > 0 && dp[que.peekLast()] < dp[i])
+            	que.pollLast();
+            que.add(i);
+        }
+        return dp[0];
