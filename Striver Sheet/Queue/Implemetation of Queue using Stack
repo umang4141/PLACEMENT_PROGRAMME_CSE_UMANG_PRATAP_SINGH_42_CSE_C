@@ -1,0 +1,64 @@
+import java.util.*;
+import java.io.*;
+import java.util.Stack;
+public class queue_using_stack{
+       private Stack<Integer> s1 = new Stack<>();
+       private Stack<Integer> s2 = new Stack<>();
+    public void enqueue(int item)
+    {
+       s1.push(item);
+       System.out.println(s1);
+
+    }
+    public void dequeue(int item)
+    {
+        if(s2.empty())
+        {
+            if(s1.empty())
+            {
+                System.out.println("Cannot Dequeue value stack is empty");
+            }
+          else{
+        while(!s1.empty())
+            {
+                s2.push(s1.pop());
+            }
+            
+
+        }
+        }
+        System.out.println(s2.pop());
+    }
+    public void size()
+    {
+        System.out.println(s1.size());
+    }
+public void isEmpty(){
+if(s1.empty() && s2.empty())
+{
+    System.out.println("Empty");
+}
+else{
+    System.out.println("Not empty");
+}
+    }
+    public static void main(String args[])
+    {
+        queue_using_stack call = new queue_using_stack();
+        call.isEmpty();
+        call.enqueue(10);
+        call.enqueue(20);
+        call.enqueue(30);
+        call.size();
+        call.enqueue(40);
+        call.enqueue(50);
+        call.enqueue(60);
+        call.dequeue(10);
+        call.isEmpty();
+
+
+
+
+        
+    }
+}
