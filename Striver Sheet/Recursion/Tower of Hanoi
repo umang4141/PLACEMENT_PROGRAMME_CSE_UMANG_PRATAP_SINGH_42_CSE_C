@@ -1,0 +1,25 @@
+import java.util.Scanner;
+import java.util.*:
+public class Toh {
+    
+    public static void find(int n,int A,int B,int C)
+    {
+         if(n==0)
+         {
+            return;
+         }
+find(n-1,A,C,B);
+System.out.println(n + "[ " + A + " ->" + B + " ]");
+find(n-1,C,B,A);
+
+    }
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n= sc.nextInt();
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        int C = sc.nextInt();
+        find(n,A,B,C);
+    }
+}
