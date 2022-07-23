@@ -1,0 +1,44 @@
+"use strict";
+const prompt = require("prompt-sync")({ sigint: true });
+// let n = parseInt(prompt("Enter the number:"));
+// //console.log(n);
+// let numbers = [];
+// for (let i = 1; i <= n; i++) {
+//     let num = parseInt(prompt());
+//     numbers.push(num);
+// }
+//console.log(numbers);
+var calculate = (number) => {
+    return number * number;
+}
+var calculate1 = (number) => {
+    var count = 0;
+    var num = number;
+
+    //var rem = num % 10;
+
+    return (Math.log10((num ^ (num >> 31)) - (num >> 31)) | 0) + 1;
+
+}
+var solution = (numbers) => {
+    var res = [];
+    var res1 = [];
+    for (var number of numbers) {
+        if (number % 2 == 0) {
+            res.push(calculate1(number));
+        } else {
+            res1.push(calculate(number));
+        }
+
+
+    }
+    return 'Even Numbers are: ' + res + '\n' + 'Odd Numbers are: ' + res1 + '\n' + 'Length is: ' + (res.length + res1.length);
+}
+let n = parseInt(prompt("Enter the number:"));
+//console.log(n);
+let numbers = [];
+for (let i = 1; i <= n; i++) {
+    let num = parseInt(prompt());
+    numbers.push(num);
+}
+console.log(solution(numbers));
