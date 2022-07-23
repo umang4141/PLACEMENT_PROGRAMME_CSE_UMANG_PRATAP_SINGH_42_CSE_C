@@ -1,0 +1,15 @@
+"use strict";
+const prompt = require("prompt-sync")({ sigint: true });
+
+function sum(a, b) {
+    return a + b;
+}
+
+function calculatefood(food, tip) {
+    let tippercentage = tip / 100;
+    tip = food * tip;
+    let total = sum(food, tip);
+    return total;
+}
+let ans = calculatefood(300, 20);
+console.log(ans);
