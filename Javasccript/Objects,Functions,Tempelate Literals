@@ -1,0 +1,11 @@
+let introduction = (name, age, mobile) => {
+    var person = {
+        name: name,
+        age: age,
+        mobile: mobile
+
+    }
+    var intro = 'Hi, my name is ' + person.name + '\n' + 'My age is ' + person.age + '\n' + 'My Mobile Number is  ' + person.mobile;
+    return intro;
+}
+console.log(introduction('Umang', 21, '8006031763'));
