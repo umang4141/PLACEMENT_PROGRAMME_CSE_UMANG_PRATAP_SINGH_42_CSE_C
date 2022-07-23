@@ -1,0 +1,29 @@
+"use strict";
+const prompt = require("prompt-sync")({ sigint: true });
+var solution = (numbers) => {
+    //var res = [];
+    // var res1 = [];
+    let var1 = Number.MIN_VALUE;
+
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > var1) {
+            var1 = numbers[i];
+        }
+    }
+    let var2 = Number.MAX_VALUE;
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] < var2) {
+            var2 = numbers[i];
+        }
+    }
+    //return var1 + '  ' + var2;
+    return 'Maximum Number is: ' + var1 + '\n' + 'Minimum Number is: ' + var2;
+}
+let n = parseInt(prompt("Enter the number:"));
+
+let numbers = [];
+for (let i = 1; i <= n; i++) {
+    let num = parseInt(prompt());
+    numbers.push(num);
+}
+console.log(solution(numbers));
