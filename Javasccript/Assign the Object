@@ -1,0 +1,11 @@
+var object1 = {
+    name: 'Umang',
+    age: 27,
+    sex: 'male'
+}
+for (let key in object1) {
+    console.log(object1[key]);
+}
+object1.phone = '80060317.63';
+object1['Address'] = 'Muradnagar';
+console.log(object1);
