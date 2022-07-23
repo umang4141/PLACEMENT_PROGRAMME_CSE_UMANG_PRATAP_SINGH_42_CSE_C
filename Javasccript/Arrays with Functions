@@ -1,0 +1,19 @@
+//Arrow function 
+const calculate = (number) => {
+    return number * number;
+}
+
+const solution = (numbers) => {
+    const res = [];
+    const res1 = [];
+    for (const number of numbers) {
+        if (number % 2 == 0) {
+            res.push(calculate(number));
+        } else {
+            res1.push(calculate(number));
+        }
+    }
+    return 'Even Numbers are: ' + res + '\n ' + 'Odd Numbers are: ' + res1 + '\n' + 'Length is: ' + (res.length + res1.length);
+
+}
+console.log(solution([2, 3, 4, 5, 7, 7, 6, 6, 6]));
