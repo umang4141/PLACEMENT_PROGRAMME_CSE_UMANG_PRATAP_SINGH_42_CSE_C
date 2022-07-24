@@ -1,0 +1,15 @@
+class Solution {
+    public String firstPalindrome(String[] words) {
+        for(String find:words)
+        {
+            String str ="";
+            for(int i=find.length()-1;i>=0;i--)
+            {
+             str=str + find.charAt(i);   
+            }
+            if(str.equals(find))
+                return find;
+        }
+        return "";
+    }
+}
