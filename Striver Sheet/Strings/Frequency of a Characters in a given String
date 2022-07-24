@@ -1,0 +1,27 @@
+import java.util.*;
+import java.io.*;
+public class countthefreq {
+
+    public  static void main(String args[]) 
+    {
+
+         String str = "abbccdefhd";
+         //System.out.println(str.length());
+         int arr[] = new int[256];
+         //System.out.println(arr.length);
+         for(int i=0;i<256;i++)
+         {
+            arr[i]=0;
+         }
+         for(int i=0;i<str.length();i++)
+         {
+                 char ch = str.charAt(i);
+                 ++arr[ch];  
+         }
+         for(int i=0;i<str.length();i++)
+         {
+            char ch = str.charAt(i);
+           System.out.println("Frequency of " + ch + " is " + arr[ch]);
+         }
+    }
+}
