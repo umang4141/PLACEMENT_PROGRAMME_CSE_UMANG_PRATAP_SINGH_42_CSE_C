@@ -1,0 +1,29 @@
+"use strict";
+const prompt = require("prompt-sync")({ sigint: true });
+let minute = (number) => {
+    return number * 60;
+}
+let Seconds = (number) => {
+    return number * 60 * 60;
+}
+let calculate = (count) => {
+
+    let res = [];
+    let res1 = [];
+    for (let number of count) {
+        if (number % 2 == 0) {
+            res.push(minute(number));
+        } else {
+            res1.push(Seconds(number));
+        }
+    }
+    return "Converting into hours: " + res + '\n' + "Converting into Seconds: " + res1;
+}
+let n = parseInt(prompt());
+let count = [];
+for (let i = 0; i < n; i++) {
+
+    let num = parseInt(prompt());
+    count.push(num);
+}
+console.log(calculate(count));
