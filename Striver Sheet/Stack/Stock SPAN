@@ -1,52 +1,44 @@
-import java.io.*;
 import java.util.*;
-
-public class Main{
-  public static void display(int[] a){
-    StringBuilder sb = new StringBuilder();
-
-    for(int val: a){
-      sb.append(val + "\n");
+import java.io.*;
+import java.util.Stack;
+public class stockspan {
+    public static void solution(int arr[],int n)
+    {
+        Stack<Integer> s1 = new Stack<>();
+        int res[] = new int[arr.length];
+        s1.push(0);
+        res[0]=1;
+        for(int i =1;i<arr.length;i++)
+        {
+               while(s1.peek()>0 && arr[i]>arr[s1.peek()])
+               {
+                s1.pop();
+               }
+               if(s1.peek()==0)
+               {
+                res[i]=i+1;
+               }
+               else
+               {
+                res[i]=i-s1.peek();
+               }
+               s1.push(i);
+        }
+        for(int i=0;i<res.length;i++)
+        {
+            System.out.print(res[i] + " ");
+        }
     }
-    System.out.println(sb);
-  }
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        solution(arr,n);
 
-public static void main(String[] args) throws Exception {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-    int n = Integer.parseInt(br.readLine());
-    int[] a = new int[n];
-    for(int i = 0; i < n; i++){
-       a[i] = Integer.parseInt(br.readLine());
     }
-
-    int[] nge = solve(a);
-    display(nge);
- }
-
- public static int[] solve(int[] arr){
-   // solve
-   int nge[] = new int[arr.length];
-   Stack<Integer> st = new Stack<>();
-   st.push(arr[arr.length-1]);
-   nge[arr.length-1]=-1;
-   for(int i=arr.length-2;i>=0;i--)
-   {
-       while(st.size()>0 && arr[i]>=st.peek())
-       {
-           st.pop();
-       }
-       if(st.size()==0)
-       {
-           nge[i]=-1;
-       }
-       else
-       {
-           nge[i] = st.peek();
-       }
-       st.push(arr[i]);
-   }
-   return nge;
- }
-
 }
