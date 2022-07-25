@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+import java.util.Stack;
+public class nexttoright {
+    public static void solution(int arr[],int n)
+    {
+        Stack<Integer> s1 = new Stack<>();
+        int res[] = new int[arr.length];
+        s1.push(arr[arr.length-1]);
+        res[arr.length-1]=-1;
+        for(int i =arr.length-2;i>=0;i--)
+        {
+               while(s1.peek()>0 && arr[i]>=s1.peek())
+               {
+                s1.pop();
+               }
+               if(s1.peek()==0)
+               {
+                res[i]=-1;
+               }
+               else
+               {
+                res[i]=s1.peek();
+               }
+               s1.push(arr[i]);
+        }
+        for(int i=0;i<res.length;i++)
+        {
+            System.out.print(res[i] + " ");
+        }
+    }
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        solution(arr,n);
+
+    }
+}
