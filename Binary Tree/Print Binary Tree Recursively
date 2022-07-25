@@ -1,0 +1,30 @@
+package Binary_Trees;
+
+public class BinaryTreeUse {
+public static void printTree(BinaryTreeNode<Integer> root)
+{
+
+	 if(root==null)
+	 {
+		 return;
+	 }
+	 System.out.println(root.data);
+	 printTree(root.left);
+	 printTree(root.right);
+	
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 BinaryTreeNode<Integer> Root = new BinaryTreeNode<>(1);
+		 BinaryTreeNode<Integer> RootLeft = new BinaryTreeNode<>(2);
+		 BinaryTreeNode<Integer> RootRight = new BinaryTreeNode<>(3);
+         Root.left = RootLeft;
+         Root.right = RootRight;
+         BinaryTreeNode<Integer> RootLeftR = new BinaryTreeNode<>(4);
+         BinaryTreeNode<Integer> RootLeftL = new BinaryTreeNode<>(5);
+		 RootLeft.right = RootLeftR;
+		 RootRight.left = RootLeftL;
+		 printTree(Root);
+	}
+
+}
