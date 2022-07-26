@@ -1,0 +1,36 @@
+import java.util.*;
+import java.io.*;
+public class replace{
+public static void main(String args[])
+{
+  int arr[]={17,18,5,4,6,1};
+  
+int replace[] = new int[arr.length];
+//Arrays.sort(arr);
+// for(Integer arr1:arr)
+// {
+// System.out.println(arr1);
+// }
+int k=0;
+int max = Integer.MIN_VALUE;
+for(int i=0;i<arr.length;i++)
+{
+    max=0;
+    for(int j=i+1;j<arr.length;j++)
+    {
+        max = Math.max(arr[j],max);
+        
+    }
+    replace[k]=max;
+    k++;
+ 
+    
+  
+}
+replace[arr.length-1]=-1;
+for(Integer say:replace)
+{
+System.out.println(say);
+}
+}
+}
