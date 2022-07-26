@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isSameAfterReversals(int num) {
+      int reversed1Num=0;
+int reversed2Num=0;
+int reverseNum=num;
+while(reverseNum!=0){
+reversed1Num*=10;
+reversed1Num+=reverseNum%10;
+reverseNum/=10;
+}
+while(reversed1Num!=0){
+reversed2Num*=10;
+reversed2Num+=reversed1Num%10;
+reversed1Num/=10;
+}
+if(reversed2Num==num) return true;
+        else
+return false;
+
+    }
+}
