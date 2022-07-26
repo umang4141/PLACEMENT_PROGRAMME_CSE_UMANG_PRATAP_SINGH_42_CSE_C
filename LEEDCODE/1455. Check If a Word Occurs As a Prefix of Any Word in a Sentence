@@ -1,0 +1,31 @@
+import java.util.*;
+import java.io.*;
+public class wordoccur {
+    public static void main(String args[]){
+    String sentence = "i am tired";
+    String strArray[] = sentence.split(" ");
+        String searchword = "burg";
+        int count = -1;
+        int count1 = 0;
+     for(int i=0;i<strArray.length;i++)
+     {
+        if(strArray[i].startsWith(searchword))
+        {
+            count1++;
+            count = i;
+            break;
+        }
+
+}
+
+    
+if(count1>0)
+{
+    System.out.println(count+1);
+}
+else
+{
+System.out.println(-1);
+}
+}
+}
