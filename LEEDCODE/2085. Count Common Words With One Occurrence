@@ -1,0 +1,59 @@
+class Solution {
+    public int countWords(String[] words1, String[] words2) {
+      boolean visited[] = new boolean[words1.length];
+Arrays.fill(visited, false);
+ArrayList<String>s1 = new ArrayList<>();
+for (int i = 0; i < words1.length; i++) {
+if (visited[i] == true)
+continue;
+int count = 1;
+for (int j = i + 1; j < words1.length; j++) {
+if (words1[i].equals(words1[j])) {
+visited[j] = true;
+count++;
+}
+}
+if(count==1)
+{
+s1.add(words1[i]);
+}
+}
+
+        boolean visited1[] = new boolean[words2.length];
+   Arrays.fill(visited1,false);
+ArrayList<String>s2 = new ArrayList<>();
+for (int i = 0; i < words2.length; i++) {
+if (visited1[i] == true)
+continue;
+int count1 = 1;
+for (int j = i + 1; j < words2.length; j++) {
+if (words2[i].equals(words2[j])) {
+    visited1[j] = true;
+count1++;
+}
+}
+if(count1==1)
+{
+s2.add(words2[i]);
+}
+}
+
+int count2 = 0;
+
+
+    for(int i=0;i<s1.size();i++)
+    {
+       
+        for(int j=0;j<s2.size();j++){
+        if(s1.get(i).equals(s2.get(j)))
+        {
+            count2++;
+        }
+    
+}
+
+    
+} 
+        return count2;
+    }
+}
