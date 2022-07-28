@@ -1,0 +1,87 @@
+class Solution {
+    public int countValidWords(String sentence) {
+        String words[]  = sentence.split("\\s");
+    int res=0;
+    for(int i=0;i<words.length;i++)
+    {
+        String str = words[i].trim();
+        
+        if(!str.contains("0")   && !str.contains("1")  && !str.contains("2")  && !str.contains("3")  && !str.contains("4")  && !str.contains("5")  && !str.contains("6")  && !str.contains("7")  && !str.contains("8")  && !str.contains("9") && str!="")
+        {
+            HashMap<Character,Integer> map = new HashMap<>();
+            for(int j=0;j<str.length();j++)
+            {
+                map.put(str.charAt(j),map.getOrDefault(str.charAt(j),0)+1);
+            }
+
+            if((str.matches("^[a-zA-Z]*$"))) 
+            {
+                res++;
+            }
+            else if(str.contains("!") && str.charAt(str.length()-1)=='!' && map.get('!')==1 && !str.contains("-")&& !str.contains(".") && !str.contains(","))
+            {
+                res++;
+            }
+            else if(str.contains(".") && str.charAt(str.length()-1)=='.' && map.get('.')==1 && !str.contains("-") && !str.contains("!") && !str.contains(","))
+            {
+                res++;
+            }
+            else if(str.contains(",") && str.charAt(str.length()-1)==',' && map.get(',')==1 && !str.contains("-")&& !str.contains("!") && !str.contains("."))
+            {
+                res++;
+            }
+            if(str.contains("-") && str.length()!=1 && map.get('-')==1)
+            {
+                if(helper(str)) res++;
+            }
+        }
+    }
+    return res;
+}
+
+public boolean helper(String res)
+{
+     int n=res.indexOf("-");
+    if(n>0 && n<=res.length()-2)
+    {
+        String f=res.substring(0,n);
+        String s= res.substring(n+1,res.length()).trim();
+        int a=s.indexOf(".");
+        int b=s.indexOf(",");
+        int c=s.indexOf("!");
+        int num=0;
+        if(s.contains(".") && a==s.length()-1 && s.length()!=1)
+        {
+            num++;
+        }
+        else if(s.contains(",") && b==s.length()-1 && s.length()!=1)
+        {
+            num++;
+        }
+        else if(s.contains("!") && c==s.length()-1 && s.length()!=1)
+        {
+            num++;
+        }
+        if(!s.contains(".") && !s.contains(",") && !s.contains("!"))
+        {
+            num++;
+        }
+        if((f.matches("^[a-zA-Z]*$")))
+        {
+            num++;
+        }
+        if(num==2)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {
+        return false;
+    }
+}
+}
