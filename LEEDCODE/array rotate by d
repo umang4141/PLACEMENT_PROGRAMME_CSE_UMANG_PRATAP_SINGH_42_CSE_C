@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+public class leftrotatebyd {
+    public static void main(String args[])
+    {
+      
+        int nums[]={1,2,3,4,5};
+            
+            int d= 4;
+        int arr[] = new int[nums.length];
+        int k = 0;
+        int j = 0;
+        for(int i=d;i<nums.length;i++)
+        {
+
+            arr[k] = nums[i];
+            k++;
+            j = k;
+        }
+        //System.out.println(j);
+        //arr[nums.length-1] = n;
+       for(int i=0;i<d;i++)
+       {
+        arr[k] = nums[i];
+        k++;
+        //System.out.println(arr[i] + " ");
+
+       } 
+       for(int i=0;i<nums.length;i++)
+       {
+        System.out.print(arr[i] + " ");
+       }
+    }
+}
