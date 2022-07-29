@@ -1,0 +1,42 @@
+import java.util.*;
+import java.io.*;
+public class consecutiveones {
+    public static void main(String args[])
+    {
+        int max = Integer.MIN_VALUE;
+        int count = 0,count1=0;
+        int nums[]={0,1,1,0,1,0};
+        for(int i=0;i<nums.length;i++)
+        {
+           if(nums[i]==1)
+           {
+            count1++;
+           }
+        }
+        if(count1==nums.length)
+        {
+            System.out.println(count1);
+        }
+        else{
+        Stack<Integer> s1 = new Stack<>();
+        for(int i=0;i<nums.length;i++)
+        {
+            
+           if(nums[i]==1)
+           {
+               s1.push(nums[i]);
+               count++;
+           }
+           else{
+            if(count>max)
+            {
+                max = count;
+                count=0;
+            }
+            
+           }
+        }
+        System.out.println(max);
+    }
+}
+}
