@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+public class leftrotate {
+    public static void main(String args[])
+    {
+      
+        int nums[]={5,7,12,11,19,18,17,16};
+        int n = nums[0];
+        int arr[] = new int[nums.length];
+        int k = 0;
+        for(int i=1;i<nums.length;i++)
+        {
+
+            arr[k] = nums[i];
+            k++;
+        }
+        arr[nums.length-1] = n;
+       for(int i=0;i<nums.length;i++)
+       {
+        System.out.println(arr[i] + " ");
+       } 
+    }
+}
