@@ -1,0 +1,24 @@
+class Solution {
+    public int kthSmallest(int[][] matrix, int k) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+        // int m1 = 8;
+   // System.out.println(n);
+   // System.out.println(m);
+        int ans[] = new int[n*n];
+        int k1 = 0;
+        for(int i=0;i<matrix.length;i++)
+        {
+             for(int j=0;j<matrix.length;j++)
+             {
+                ans[k1] = matrix[i][j];
+             k1++;
+             }
+        }
+        Arrays.sort(ans);
+        int m1 = 0;
+     m1 = ans[k-1];
+        return m1;
+        
+    }
+}
