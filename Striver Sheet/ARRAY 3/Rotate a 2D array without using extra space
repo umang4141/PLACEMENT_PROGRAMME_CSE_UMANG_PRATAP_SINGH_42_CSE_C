@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+public class rotate {
+    public static void main(String args[])
+    {
+        int Arr[][] = {{1,  2,  3},{4,  5,  6}, {7,  8,  9}};
+        int n = Arr.length;
+        int ans[][] = new int[n][n];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                ans[i][j] = Arr[j][i];
+            }
+           
+        }
+        for(int i=n-1;i>=0;i--)
+        {
+            for(int j=0;j<n;j++)
+            {
+                System.out.print(ans[i][j] + " ");
+            }
+           System.out.println();
+
+        }
+    }
+}
