@@ -1,0 +1,46 @@
+//{ Driver Code Starts
+//Initial Template for Java
+
+
+//Initial Template for Java
+
+
+
+import java.io.*;
+import java.util.*;
+
+
+// } Driver Code Ends
+//User function Template for Java
+
+
+class Solution
+{
+    void sortedMerge(long A[], long B[], long res[], int n,int m)
+    {
+        // Your code goes here
+        Arrays.sort(A);
+        Arrays.sort(B);
+        int i=0;int j=0;int k=0;
+        while(i<n && j<m){
+            if(A[i]<=B[j]){
+                res[k]=A[i];
+                i++;
+            }
+            else{
+                res[k]=B[j];
+                j++;
+            }
+            k++;
+        }
+        while(i<n){
+            res[k]=A[i];
+                i++;k++;
+        }
+        while(j<m){
+            res[k]=B[j];
+                j++;k++;
+        }
+        
+    }
+}
