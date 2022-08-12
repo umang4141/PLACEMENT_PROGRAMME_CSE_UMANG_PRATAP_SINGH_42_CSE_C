@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.util.HashSet;
+public class Subarraywithsumzero {
+    public static void main(String args[])
+    {
+        int arr[]={1,4,13,-3,-10,5};
+        int sum = 17;
+        HashSet<Integer>h1 = new HashSet<Integer>();
+        boolean flag = false;
+        int subarraysum = 0;
+        
+        for(int i=0;i<arr.length;i++)
+        {
+          
+            subarraysum+=arr[i];
+            if(arr[i]==0 || subarraysum==0|| h1.contains(subarraysum))
+            {
+              flag = true;
+            }
+     
+            h1.add(subarraysum);
+        }
+    
+      if(flag)
+      
+        System.out.println("Present");
+      
+      else
+    System.out.println("Not Present");
+
+    }
+}
