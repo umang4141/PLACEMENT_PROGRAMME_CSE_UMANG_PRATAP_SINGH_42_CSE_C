@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+import java.util.HashSet;
+import java.lang.*;
+public class longestsubarray {
+    public static void main(String args[])
+    {
+        int arr[]={3,1,0,1,8,2,3,6};
+        int sum = 0;
+        int res = 0;
+        int find = 5;
+        HashSet<Integer>h1 = new HashSet<Integer>();
+        for(int i=0;i<arr.length;i++)
+        {
+            sum = 0;
+            for(int j=i;j<arr.length;j++)
+            {
+                sum = sum + arr[j];
+                if(sum == find)
+                {
+                    res = Math.max(res,j-i+1);
+                }
+            }
+        }
+       
+  System.out.println(res);
+}
+}
