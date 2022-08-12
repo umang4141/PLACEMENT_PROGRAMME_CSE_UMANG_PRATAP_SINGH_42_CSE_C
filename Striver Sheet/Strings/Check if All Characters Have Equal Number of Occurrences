@@ -1,0 +1,27 @@
+class Solution {
+    public boolean areOccurrencesEqual(String s) {
+        int arr[] = new int[26];
+      for(int i=0;i<26;i++)
+      {
+          arr[i] = 0;
+      }
+        for(int i=0;i<s.length();i++)
+      {
+        char ch = s.charAt(i);
+        ++arr[ch-'a'];
+        //System.out.println(arr[ch]);
+      }
+        HashSet<Integer>h1 = new HashSet<Integer>();
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>0)
+            {
+                h1.add(arr[i]);
+            }
+            
+        }
+        if(h1.size()==1)
+            return true;
+        else 
+            return false;
+    }
+}
