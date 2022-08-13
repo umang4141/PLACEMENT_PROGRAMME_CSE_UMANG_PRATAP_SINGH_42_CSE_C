@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.lang.model.element.Element;
+
+public class maximumfreq {
+    public static void find(int arr[])
+    {
+        
+        HashMap<Integer,Integer> h1 = new HashMap<>();
+        //h1.put(arr[0],1);
+        int freq = 1;
+        int maxele=arr[0];
+        int freq1 = 0;
+        for(int i=0;i<arr.length;i++)
+        {
+            boolean exist = h1.containsKey(arr[i]);
+            {
+             
+                if(exist)
+                {
+                 int existfreq = h1.get(arr[i]);
+                 h1.put(arr[i],existfreq+1);
+                }
+                else
+                 {
+                    h1.put(arr[i],1);
+                 }
+                 freq1 = h1.get(arr[i]);
+                 if(freq1>freq)
+                 {
+                    freq = freq1;
+                    maxele = arr[i];
+                 }
+            }
+        }
+        System.out.print(h1);
+        System.out.println();
+   System.out.println(maxele + " is maximum freq Element with freq: " + freq);
+
+   for(Map.Entry<Integer,Integer> entry:h1.entrySet())
+   {
+    System.out.println("Element | Frequency");
+    System.out.println(entry.getKey() + "              " +entry.getValue());
+
+   }
+    }
+    public static void main(String args[])
+    {
+        int arr[] = {3,2,3,3,3,3,4,5,3,4,3,2,3};
+       find(arr);
+        //System.out.println((res));
+    }
+}
