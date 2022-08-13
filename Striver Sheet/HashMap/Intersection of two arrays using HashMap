@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+public class intersectionofarrays {
+    public static void main(String args[]){
+    HashMap<Integer,Integer> h1 = new HashMap<>();
+        //h1.put(arr[0],1);
+   int arr[]={1,4,5,2,2,3,6,5,3,2};
+   int arr1[]={2,3,2,6,6,5,1};
+   ArrayList<Integer> a1 = new ArrayList<>();
+
+        for(int i=0;i<arr.length;i++)
+        {
+            boolean exists = h1.containsKey(arr[i]);
+            if(exists)
+            {
+                int getval = h1.get(arr[i]);
+                h1.put(arr[i],getval+1);
+            }
+            else{
+                h1.put(arr[i],1);
+            }
+
+        }
+        for(int i=0;i<arr1.length;i++)
+        {
+            if(h1.containsKey(arr1[i]))
+            {
+                int val = h1.get(arr1[i]);
+                if(val>0){
+                a1.add(arr1[i]);
+                h1.put(arr1[i],val-1);
+            }
+        }
+    }
+    Collections.sort(a1);
+    System.out.println(a1);
+    }
+}
